@@ -78,6 +78,8 @@ sudo apt-get update
 ```markdown
 sudo apt-get upgrade
 ```
+## 安装chrome
+直接去官网下载后双击安装[chrome](https://www.google.cn/chrome/)
 
 ## 安装teamviewer
 首先去官网下载相应的安装包[teamviewer](https://www.teamviewer.com/zhcn/download/linux/)，下载完成后，在对应下载目录执行命令
