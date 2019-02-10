@@ -6,12 +6,12 @@
 
 为了更快的速度，我们首先修改阿里源为默认源。
 
-# 备份
+#### 备份
 ```markdown
 cp /etc/apt/sources.list /etc/apt/sources.list.bak
 ```
 
-# 在sources.list文件前面添加如下条目，即阿里源
+#### 在sources.list文件前面添加如下条目，即阿里源
 ```markdown
 deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
@@ -24,8 +24,8 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted univers
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
 ```
-# 另附其他源条目
-# 中科大
+#### 另附其他源条目
+#### 中科大
 ```markdown
 deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse
@@ -38,7 +38,7 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted univ
 deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 ```
-# 163
+#### 163
 ```markdown
 deb http://mirrors.163.com/ubuntu/ bionic main restricted universe multiverse
 deb http://mirrors.163.com/ubuntu/ bionic-security main restricted universe multiverse
@@ -51,7 +51,7 @@ deb-src http://mirrors.163.com/ubuntu/ bionic-updates main restricted universe m
 deb-src http://mirrors.163.com/ubuntu/ bionic-proposed main restricted universe multiverse
 deb-src http://mirrors.163.com/ubuntu/ bionic-backports main restricted universe multiverse
 ```
-# 清华
+#### 清华
 ```markdown
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
 deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
