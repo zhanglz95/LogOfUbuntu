@@ -80,7 +80,20 @@ sudo apt-get upgrade
 ```
 
 ## 安装teamviewer
-Coming soon...
+首先去官网下载相应的安装包[teamviewer](https://www.teamviewer.com/zhcn/download/linux/)，下载完成后，在对应下载目录执行命令
+```markdown
+sudo dpkg -i [安装包名称]
+```
+如果出错了，执行命令
+```markdown
+sudo apt install -f
+```
+然后再安装
+
+如果要卸载teamviewer
+```markdown
+apt purge teamviewer
+```
 
 ## 安装显卡驱动（如果有）
 Coming soon...
