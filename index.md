@@ -108,8 +108,14 @@ apt purge teamviewer
 
 ## 安装显卡驱动（如果有）
 这里按照这里的教程进行安装[安装显卡教程](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux#h7-automatic-install-using-ppa-repository-to-install-nvidia-beta-drivers)。
+### 下载驱动
+先查看自己显卡型号
+```markdown
+lspci |grep VGA
+```
+NVIDIA官网选择合适的驱动程序[NVIDIA驱动](https://www.nvidia.com/Download/index.aspx)。
 
-###首先禁用nouveau
+### 禁用nouveau
 ```markdown
 sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
@@ -125,6 +131,20 @@ options nouveau modeset=0
 sudo update-initramfs -u
 sudo reboot
 ```
+
+### 安装驱动
+重启后进入命令行Ctrl+Alt+F4(不同电脑不一样，一般在F1-F6)，进入刚下载驱动的目录。
+```markdown
+sudo service lightdm stop
+#或sudo service gdm stop
+sudo sh ./[驱动文件名.run]
+```
+安装完成后验证安装是否成功。
+```markdown
+sudo nvidia-smi
+```
+显示显卡信息则安装成功。
+
 
 ## 安装cuda
 Coming soon...
