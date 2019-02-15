@@ -1,7 +1,7 @@
 # 安装Ubuntu之后的步骤
 
 这个页面记录安装Ubuntu的过程，包括一些必要的设置和安装必要软件的过程。
-若无提及，此记录仅针对Ubuntu16.04。
+若无提及，此记录在Ubuntu18.04测试。
 
 ## 更换源
 
@@ -107,7 +107,24 @@ apt purge teamviewer
 ```
 
 ## 安装显卡驱动（如果有）
-Coming soon...
+这里按照这里的教程进行安装[安装显卡教程](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux#h7-automatic-install-using-ppa-repository-to-install-nvidia-beta-drivers)。
+
+###首先禁用nouveau
+```markdown
+sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+```
+然后检查是否成功。
+```markdown
+cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+blacklist nouveau
+options nouveau modeset=0
+```
+刷新再重启
+```markdown
+sudo update-initramfs -u
+sudo reboot
+```
 
 ## 安装cuda
 Coming soon...
