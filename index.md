@@ -9,10 +9,13 @@
 
 ### 备份
 ```markdown
-cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 ```
 
 ### 在sources.list文件前面添加如下条目，即阿里源
+```markdown
+sudo gedit /etc/apt/sources.list
+```
 ```markdown
 deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
 deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
