@@ -239,6 +239,12 @@ make
 ```
 这一步会耗费一点时间进行编译，最后如果编译成功，最后会显示Finished building CUDA samples。
 
+然后测试cuda设备连接情况
+```markdown
+cd ~/NVIDIA_CUDA-10.0_Samples/bin/x86_64/linux/release/
+sudo ./bandwidthTest
+```
+
 ## 安装anaconda
 这一步[参考教程](https://blog.csdn.net/lwplwf/article/details/79162470)
 ### 下载
