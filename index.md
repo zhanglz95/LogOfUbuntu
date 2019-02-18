@@ -206,3 +206,9 @@ ssh -T git@github.com
 ```
 如果结果为 “ ...You've successfully authenticated, but GitHub does not provide shell access”，则说明成功。
 
+## 额外记录
+### 键鼠没有反应BUG
+突然键鼠不能用，网上查到是需要安装一个包：http://forum.ubuntu.org.cn/viewtopic.php?t=487790
+```markdown
+sudo apt install xserver-xorg-input-all
+```
