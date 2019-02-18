@@ -266,10 +266,10 @@ source ~/.bashrc
 搞定
 
 ## 安装pytorch
-Coming soon...
+[pytorch官网](https://pytorch.org/)
 
 ## 安装tensorflow
-Coming soon...
+[tensorflow官网](https://www.tensorflow.org/)
 
 ## 安装git+ssh
 这里参考ubuntu git的[安装教程](https://segmentfault.com/a/1190000013154540)
