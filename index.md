@@ -91,6 +91,9 @@ Ubuntu18.04一直没搞定这个问题，最简单的方法去淘宝买一个显
 ## 安装chrome
 直接去官网下载后双击安装[chrome](https://www.google.cn/chrome/)
 
+这里我还需要安装一个SwitchOmega来配合shadowsocks科学上网。
+__待更新__
+
 ## 安装teamviewer
 首先去官网下载相应的安装包[teamviewer](https://www.teamviewer.com/zhcn/download/linux/)，下载完成后，在对应下载目录执行命令
 ```markdown
