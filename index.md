@@ -151,6 +151,93 @@ sudo nvidia-smi
 
 ## 安装cuda
 这一步[参考教程](https://zhuanlan.zhihu.com/p/47330858)
+这一步记录部分步骤，若有出错看原教程。
+
+### 下载
+首先去下载符合自己要求的CUDA：[CUDA Toolkit](https://developer.nvidia.com/cuda-downloads),安装方式选择runfile。
+
+### 安装
+__这里默认插上了支持Cuda的GPU、禁用了nouveau驱动等操作__
+
+重启电脑，进入登录界面的时候，不要登录进入桌面(否则可能会失败，若不小心进入，请重启电脑)，直接按Ctrl+Alt+F4进入文本模式（命令行界面，不同电脑输入不同），然后登录账户。登录后输入：
+```markdown
+sudo service lightdm stop 
+#sudo service gdm stop 
+```
+然后切换到cuda安装文件的路径：例如我的cuda在下载文件夹里所以我要输入：
+```markdown
+cd Downloads
+sudo sh [安装包名称]
+```
+开始安装，按提示一步步操作，按住回车看完声明。按照提示输入相应字符，例如有的需要输入accept，有的需要输入yes。
+
+遇到提示是否安装openGL ，选择no（如果你的电脑跟我一样是双显，且主显是非NVIDIA的GPU在工作，需要选择no），其他都选择yes或者默认即可。（如果您的电脑是双显卡且在这一步选择了yes，那么你极有可能安装完CUDA之后，重启图形化界面后遇到登录界面循环问题：输入密码后又跳回密码输入界面。这是因为你的电脑是双显，而且用来显示的那块GPU不是NVIDIA，则OpenGL Libraries就不应该安装，否则你正在使用的那块GPU（非NVIDIA的GPU）的OpenGL Libraries会被覆盖，然后GUI就无法工作了。）
+
+安装成功后，会显示installed，否则会显示failed。
+
+然后重新启动图形化界面，输入：
+```markdown
+sudo service lightdm start 
+#sudo service gdm start 
+```
+这时会进入图形界面，否则需要手工进入。
+
+然后重启。
+
+执行：
+```markdown
+ls /dev/nvidia*
+```
+若显示：
+```markdown
+/dev/nvidia0      /dev/nvidiactl      /dev/nvidia-uvm
+```
+则成功，否则看原教程找解决方案。
+
+### 设置环境变量
+终端输入：
+```markdown
+sudo gedit /etc/profile
+```
+文件末尾复制添加（64位）：
+```markdown
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64\
+${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+```
+保存文件，并重启。
+
+### 验证环境变量
+a.验证驱动版本
+```markdown
+cat /proc/driver/nvidia/version
+```
+输出类似：
+```markdown
+NVRM version: NVIDIA UNIX x86_64 Kernel Module  410.48  Thu Sep  6 06:36:33 CDT 2018
+GCC version:  gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
+```
+
+b.验证CUDA Toolkit
+```markdown
+nvcc -V
+```
+输入类似：
+```markdown
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2018 NVIDIA Corporation
+Built on Sat_Aug_25_21:08:01_CDT_2018
+Cuda compilation tools, release 10.0, V10.0.130
+```
+全部安装成功
+
+### 尝试编译cuda提供的例子
+打开终端输入：
+```markdown
+cd ~/NVIDIA_CUDA-10.0_Samples
+make
+```
+这一步会耗费一点时间进行编译，最后如果编译成功，最后会显示Finished building CUDA samples。
 
 ## 安装anaconda
 这一步[参考教程](https://blog.csdn.net/lwplwf/article/details/79162470)
