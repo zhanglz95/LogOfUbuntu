@@ -147,7 +147,7 @@ sudo nvidia-smi
 显示显卡信息则安装成功。
 
 ## 安装cuda
-Coming soon...
+这一步[参考教程](https://zhuanlan.zhihu.com/p/47330858)
 
 ## 安装anaconda
 Coming soon...
