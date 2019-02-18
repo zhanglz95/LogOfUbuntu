@@ -150,7 +150,24 @@ sudo nvidia-smi
 这一步[参考教程](https://zhuanlan.zhihu.com/p/47330858)
 
 ## 安装anaconda
-Coming soon...
+这一步[参考教程](https://blog.csdn.net/lwplwf/article/details/79162470)
+### 下载
+地址：https://www.anaconda.com/download/#linux
+
+### 安装
+进入安装包所在目录，执行命令
+```markdown
+bash [安装包名]
+```
+一路回车，有时候需要输入yes。
+
+问到是否安装VSCode时候可以选择No。
+
+再执行命令让.bashrc中添加的路径生效：
+```markdown
+source ~/.bashrc
+```
+搞定
 
 ## 安装pytorch
 Coming soon...
