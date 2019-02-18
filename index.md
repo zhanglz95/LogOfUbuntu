@@ -159,4 +159,30 @@ Coming soon...
 Coming soon...
 
 ## 安装git+ssh
-Coming soon...
+这里参考ubuntu git的[安装教程](https://segmentfault.com/a/1190000013154540)
+### 安装git
+安装并配置用户信息
+```markdown
+sudo apt-get install git
+git config --global user.name "Your Name"
+git config --global user.email Your_email@example.com
+```
+
+### 配置ssh
+安装ssh
+```markdown
+sudo apt-get install ssh
+```
+创建密钥文件
+```markdown
+ssh-keygen -t rsa -C "你的github账号邮箱"
+#这里会要求输入密钥口令，留空即可
+```
+密钥存储在~/.ssh文件夹中。将id_rsa.pub文件内容全部复制添加到github即可。
+测试：
+```markdown
+ssh -T git@github.com
+#注意，这里需要输入yes后回车，不能留空！
+```
+如果结果为 “ ...You've successfully authenticated, but GitHub does not provide shell access”，则说明成功。
+
