@@ -85,7 +85,8 @@ sudo apt-get upgrade
 
 ## 设置虚拟显示器
 主机可能大部分时间远程控制，这个时候需要设置虚拟显示器来保持远程访问分辨率。
-Coming soon...
+Ubuntu18.04一直没搞定这个问题，最简单的方法去淘宝买一个显卡欺骗器……
+解决。
 
 ## 安装chrome
 直接去官网下载后双击安装[chrome](https://www.google.cn/chrome/)
@@ -107,7 +108,7 @@ apt purge teamviewer
 ```
 
 ## 安装显卡驱动（如果有）
-这里按照这里的教程进行安装[安装显卡教程](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux#h7-automatic-install-using-ppa-repository-to-install-nvidia-beta-drivers)。
+按照这里的教程进行安装[安装显卡教程](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux#h7-automatic-install-using-ppa-repository-to-install-nvidia-beta-drivers)。
 ### 下载驱动
 先查看自己显卡型号
 ```markdown
