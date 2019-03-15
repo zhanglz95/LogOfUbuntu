@@ -110,6 +110,42 @@ sudo apt install -f
 apt purge teamviewer
 ```
 
+### teamviewer检测到商业用途
+Ubuntu18.04.1：
+
+teamview就是通过id来绑定终端的，id是通过网卡mac计算出来的，不改id的话，即使卸载重装，重启等操作，打开teamviewer可以看到ID是不会变的。
+
+1.删除计算机上原有的teamviewer：
+
+sudo apt --purge remove teamviewer
+rm -rf /home/xxx/.local/share/teamviewer
+rm -rf /home/xxx/.local/share/teamviewer14
+rm -rf /home/xxx/.config/teamviewer
+
+2.永久修改mac地址：
+
+sudo gedit /etc/init.d/rc.local
+
+在里面添加下面几行
+
+sudo /sbin/ifconfig eth0 down
+
+sudo /sbin/ifconfig eth0 hw ether 00:21:11:70:DD:EE（填新的MAC地址）
+
+sudo /sbin/ifconfig eht0 up
+
+3.点击右上角网络连接->wire connected->wired settings ->Identity ->Cloned Address -> 填上上面的新的MAC地址
+
+或者在设置 ->Network ->wired 小齿轮 ->Identity ->Cloned Address -> 填上上面的新的MAC地址
+
+4.下载安装teamviewer：
+
+ sudo dpkg -i teamviewer_14.1.3399_amd64.deb
+
+sudo apt install -f
+
+``测试未通过``
+
 ## 安装显卡驱动（如果有）
 按照这里的教程进行安装[安装显卡教程](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux#h7-automatic-install-using-ppa-repository-to-install-nvidia-beta-drivers)。
 ### 下载驱动
