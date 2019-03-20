@@ -353,3 +353,34 @@ ssh -T git@github.com
 ```markdown
 sudo apt install xserver-xorg-input-all
 ```
+### /dev/sda2 recovering journal 现象的解决办法
+参考[博客](https://www.cnblogs.com/hutao722/p/9441674.html)
+
+1. 在卡住不动的界面我们需要切换到命令行模式，Ctrl+Alt+F3（跟机器有关，大概是在F1~F6之间）
+
+2. 检查显卡驱动是否已经损坏 cat /proc/driver/nvidia/version，若不能看到，则说明有问题
+
+3. 卸载已安装显卡驱动：
+
+```markdown
+sudo apt purge nvidia-*
+sudo apt autoremove
+```
+
+4. 在官网下载对应的显卡驱动程序，官网地址为：https://www.nvidia.com/Download/index.aspx，选择好对应的显卡驱动后，下载后的文件名为NVIDIA-Linux-x86_64-390.77.run
+
+5. 安装显卡驱动：sudo bash NVIDIA-Linux-x86_64-390.77.run
+
+6. 一些询问信息：
+
+   1）Accept License
+
+   2）The distribution-provided pre-install script failed! Are you sure you want to continue? -> CONTINUE INSTALLATION
+
+   3）Install NVIDIA's 32-bit compatibility libraries? ->YES
+
+   4) An incomplete installation of libglvnd was found. Do you want to install a full copy of libglvnd? This will overwrite any existing libglvnd libraries.-> Install and overwrite existin
+
+   4) Would you like to run the nvidia-xconfig utility? -> YES
+
+7. 安装完成
