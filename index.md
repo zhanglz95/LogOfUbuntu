@@ -125,7 +125,6 @@ sudo proxychains apt-get xxxx
 
 这里我还需要安装一个SwitchOmega来配合shadowsocks科学上网。
 [SwitchOmega教程](https://portal.shadowsocks.ch/index.php?rp=/knowledgebase/50)
-__待更新__
 
 ## 安装teamviewer
 首先去官网下载相应的安装包[teamviewer](https://www.teamviewer.com/zhcn/download/linux/)，下载完成后，在对应下载目录执行命令
