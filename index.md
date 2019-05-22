@@ -91,7 +91,40 @@ Ubuntu18.04一直没搞定这个问题，最简单的方法去淘宝买一个显
 ## 安装chrome
 直接去官网下载后双击安装[chrome](https://www.google.cn/chrome/)
 
+## 科学上网
+安装shadowsocks
+```markdown
+sudo apt install libsodium-dev 
+sudo pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
+```
+
+任意地方新建一个配置文件shadowsocks.config:
+```markdown
+{ "server":"*****", "server_port":*****, "local_port":1080, "password":"*****", "timeout":600, "method":"chacha20-ietf-poly1305" }
+```
+
+启动
+```markdown
+sslocal -c /etc/shadowsocks.json -d start
+```
+
+终端内使用，需安裝 proxychains
+```markdown
+sudo apt-get install proxychains
+```
+编辑 /etc/proxychains.conf，只修改最后一行。
+```markdown
+socks5 127.0.0.1 1080
+```
+接着我们就可以直接 用 proxychains + 命令的方式使用代理，例如
+```markdown
+proxychains curl xxxx
+proxychains wget xxxx
+sudo proxychains apt-get xxxx
+```
+
 这里我还需要安装一个SwitchOmega来配合shadowsocks科学上网。
+[SwitchOmega教程](https://portal.shadowsocks.ch/index.php?rp=/knowledgebase/50)
 __待更新__
 
 ## 安装teamviewer
