@@ -220,6 +220,14 @@ sudo nvidia-smi
 ```
 显示显卡信息则安装成功。
 
+*注意:*如果出现
+```
+You appear to be running an X server...
+```
+sudo init 3 注意空格 会做掉x
+rm /tmp/.X*
+上面的命令是删掉X 的锁文件
+再安装
 ## 安装cuda
 这一步[参考教程](https://zhuanlan.zhihu.com/p/47330858)
 这一步记录部分步骤，若有出错看原教程。
